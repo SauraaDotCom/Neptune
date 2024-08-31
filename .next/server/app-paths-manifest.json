@@ -1,0 +1,4 @@
+{
+  "/[user]/[folder]/[document]/page": "app/[user]/[folder]/[document]/page.js",
+  "/[user]/[folder]/page": "app/[user]/[folder]/page.js"
+}

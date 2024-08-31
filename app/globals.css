@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  -webkit-user-select: none;
+
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html {
+  @apply h-full;
+}
+body {
+  @apply h-full;
+}
+div#__next {
+  @apply h-full;
+}
+main {
+  @apply h-full;
+}
+
+.grid-item {
+  width: 96px;
+  height: 40px;
+  outline: none;
+  user-select: text;
+  cursor: default;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: #27272a;
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+  overflow: hidden; /* Hide overflow */
+  white-space: nowrap;
+  overflow-y: scroll
+}
+
+.grid-item:hover {
+  border: 1.5px solid #3f83f8;
+}
+
+.row-header {
+  width: 48px;
+  border-left: none;
+}
+
+.column-header {
+  height: 40px;
+  line-height: 40px;
+  border-top: none;
+}
+
+.row-header,
+.column-header,
+.corner {
+  background-color: #e1effe;
+  color: black;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.corner {
+  width: 48px;
+  height: 40px;
+  line-height: 40px;
+  border-top: none;
+  border-left: none;
+}
+
+.highlighted {
+  border: 1.5px solid #1a56db;
+}
+
+.highlighted-position {
+  background: #a4cafe;
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+
+  .row-header,
+  .column-header,
+  .corner {
+    background-color: #212121;
+    color: white;
+  }
+
+  .grid-item:hover {
+    border-color: #9ca3af;
+  }
+
+  .highlighted {
+    border: 1.5px solid #a4cafe;
+  }
+
+  .highlighted-position {
+    background: #a4cafe;
+    color: black;
+  }
+}
+
+.grid-item.selected {
+  background-color: red;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
